@@ -25,7 +25,7 @@ How to think :
   Now that completes the logic , if we hit a already visited node and its not previous node , Yeah! we encounter a cycle then.
 
   My complete solution :
-
+  {
    public boolean detectCycle(int[] visited , int curr , int prev ,ArrayList<ArrayList<Integer>> adj ){
 
         visited[curr] =1;
@@ -46,7 +46,7 @@ How to think :
         }
         return false;
         
-    
+     }
     }
     
     public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
