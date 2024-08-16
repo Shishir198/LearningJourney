@@ -27,11 +27,14 @@ I created a public method now so that others if they wanted an object of this cl
 which I have created and I have created a static so that they can call with the class name itself so this method belongs to a class also so
 call this method like this
 
-![image](https://github.com/user-attachments/assets/af7a3cb0-da2f-4b2a-88f7-d057c6690b28)
+![image](https://github.com/user-attachments/assets/0c7ea66b-b6fa-4713-a887-4e6897dffd71)
+
 
 
 
 Lazt init : 
+
+
 ![image](https://github.com/user-attachments/assets/ee0dc210-2a6a-47c8-88ab-0ece5757879e)
 
 Object is being created whenever its needed , whenever someone calls the function getInstance();
@@ -90,13 +93,13 @@ Bill Puck Solution  :
 ![image](https://github.com/user-attachments/assets/4a41ccc2-dd0c-4b1e-a479-024762426d0e)
 
 
-it is making use of this eager initialization right what does the disadvantage of eager initialization is hey even this 
+it is solving the disadvantage of eager initialization i.e- even this 
 class is not even used object is created right equally we have initialized number so what does Bill Puck has done is resolve 
-that only it the initialization part private static one right it just put it inside nested class a static nested class 
+that only in the initialization part private static one right it just put it inside nested class a static nested class 
 private static nested class why because this nested class do not get loaded at the time of application when it you start the application all the
 nested class do not get loaded into the memory only when they are referred when they are used then only it will load.
 
-it is very fast and this is I think you know you can tell this is also a popular 
+it is very fast,
 
 
 ENUM : 
