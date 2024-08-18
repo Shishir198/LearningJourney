@@ -10,7 +10,7 @@ classes, methods, fields, parameters, and local variables.
 
 <h2>Common Uses of Annotations</h2>
 
-Compile-Time Checking:
+Compile-Time Checking: <br> <br>
 Annotations can be used to provide additional information to the compiler, which can be used to generate warnings or errors.
 For instance, the @Override annotation indicates that a method is intended to override a method in a superclass. 
 If the method does not actually override any method, the compiler will generate an error.
@@ -19,7 +19,7 @@ If the method does not actually override any method, the compiler will generate 
     public String toString() {
         return "This is an overridden method.";
     }
-Code Generation:
+Code Generation: <br> <br>
 Annotations can be processed at compile-time or runtime to generate code or configuration files. 
 For example, libraries like Lombok use annotations to automatically generate boilerplate code such as getters and setters.
 
@@ -30,7 +30,7 @@ For example, libraries like Lombok use annotations to automatically generate boi
     }
 The @Data annotation from Lombok generates getters, setters, toString, equals, and hashCode methods.
 
-Runtime Processing:
+Runtime Processing: <br>
 Some annotations are used by frameworks and libraries to perform operations at runtime. 
 For example, in Java EE and Spring frameworks, annotations are often used to configure beans, inject dependencies, or handle transactions.
 
@@ -41,7 +41,7 @@ For example, in Java EE and Spring frameworks, annotations are often used to con
     }
 
     
-Documentation:
+Documentation: <br>
 Annotations can be used to provide additional information for documentation purposes. 
 For example, the @Deprecated annotation marks a method or class as obsolete, which can be useful for developers maintaining the code.
 
@@ -52,17 +52,18 @@ For example, the @Deprecated annotation marks a method or class as obsolete, whi
 
 
 <h2>In which scenario we must think , We should use Annotations</h2>
+<br>
 Example -
 -You have various service methods in your application that should only be accessible by users with specific roles, 
   such as ADMIN or USER. 
-  Problem : 
+  Problem : <br> 
   Manually checking user roles in each method could lead to repetitive code and is prone to errors.
 
-  Solution :
+  Solution : <br>
   Custom Annotations
   We can apply those annotation in every method where user role is required instead of checking on each method everytime.
 
-  Example : 
+  Example : <br> 
   
     public class UserService {
 
@@ -80,17 +81,17 @@ Example -
 We will see , how to create your custom annotations later in this article. For now , we understood where its useful.
 
 
-There are two types of annotations : 
+There are two types of annotations : <br> 
 1)PreDefined Annotation (built-in annotations provided by the Java language)
       Further in 2 types
       ---> Used as metadata for annotations
       ---> Used on java code like classes , methods etc.
-      
+      <br>
 2)Custom Annotation
 
 
 
-Some PreDefined Annotations : 
+Some PreDefined Annotations : <br> 
     - Deprecated
     - Override
     - SupressWarnings
@@ -103,10 +104,10 @@ Some PreDefined Annotations :
     - Repeatable (Meta-annotation)
 
 
-1. @Deprecated
+1. @Deprecated: <br>
 Provides a way to indicate that a feature is outdated and may be removed in future versions.
 It helps maintain code by preventing the use of obsolete APIs and encouraging developers to use updated alternatives.
-Example:
+Example: <br>
 
         public class OldClass {
               @Deprecated
@@ -119,14 +120,14 @@ Example:
             }
         }
 
-2. @Override
+2. @Override : <br>
 
 -Helps the compiler verify that a method is correctly overriding a method from its superclass. 
 -If the method in Child does not correctly override a method in Parent (e.g., due to a typo in method name or incorrect parameters), 
  the compiler will generate an error, helping catch such issues early.
 We can summarise , we use just for checking purpose that whether current method is overriding the superclass method correctly or not.
 
-Example:
+Example: <br>
 
     public class Parent {
         public void display() {
@@ -141,13 +142,13 @@ Example:
         }
     }
 
-3. @SuppressWarnings
+3. @SuppressWarnings : <br>
 -Instructs the compiler to suppress specific warnings during compilation.
 -Reducing unnecessary warnings that do not affect the functionality and keeps code base clean.
 -@SuppressWarnings can take one or more warning types as arguments, such as "unchecked", "deprecation", "rawtypes", etc.
  this helps in cases where you need to ignore specific compiler warnings but still ensure the code is otherwise clean.
 
-Example:
+Example: <br>
 
     @SuppressWarnings("unchecked")
     public void processList() {
@@ -156,12 +157,12 @@ Example:
         List<String> stringList = rawList; // Unsafe cast
     }
 
-4. @FunctionalInterface
+4. @FunctionalInterface : <br>
  -Indicates that an interface is intended to be a functional interface (i.e., it has exactly one abstract method).
  -Provides documentation and compiler support for lambda expressions and method references.
   Ensures that the interface adheres to the functional interface contract.
 
-Example:
+Example: <br>
 
     @FunctionalInterface
     public interface MyFunctionalInterface {
@@ -179,29 +180,29 @@ Example:
     }
     }
 
-5. @SafeVarargs
+5. @SafeVarargs <br>
 
 - Suppresses warnings about the use of varargs (variable-length argument lists) in situations where type safety might be compromised.
 - Used to indicate that a method or constructor using varargs does not perform unsafe operations on the varargs array.
 - This helps to suppress unnecessary warnings when you know that your varargs usage is safe.
 
-Example:
+Example: <br>
 
         public class SafeVarargsExample {
 
           @SafeVarargs
           public final <T> void printItems(T... items) {
-              for (T item : items) {
+              for (T item : <br> items) {
                   System.out.println(item);
               }
           }
        }  
 
-Meta Annotations : 
+Meta Annotations : <br> 
 They provide information about how the annotations themselves should be treated by the compiler and runtime
 
 1. @Target
-Function:
+Function: <br>
 
 -Specifies the types of Java elements to which an annotation can be applied.
 -Restricts the use of an annotation to specific elements, such as methods, fields, classes, or parameters. 
@@ -216,7 +217,7 @@ Function:
       }
 
 
-2. @Retention
+2. @Retention <br>
  - Defines whether an annotation is available at runtime, compile time, or in the source code only.
  - Controls the lifespan of an annotation, determining whether it is discarded by the compiler or retained for runtime processing or documentation.
 
@@ -230,21 +231,21 @@ Function:
             }
  - used to specify how long annotations with a given retention policy should be retained.
 
- - Retention Policies
-    The @Retention annotation can have one of three retention policies:
+ - Retention Policies <br>
+    The @Retention annotation can have one of three retention policies: <br>
     
-    RetentionPolicy.SOURCE
-    RetentionPolicy.CLASS
-    RetentionPolicy.RUNTIME
+    RetentionPolicy.SOURCE<br>
+    RetentionPolicy.CLASS<br>
+    RetentionPolicy.RUNTIME<br>
 
 *) RetentionPolicy.SOURCE
     Annotations with this retention policy are only available in the source code and are discarded by the compiler. 
     They are not included in the compiled .class files.
-    Use Cases:
-    Code Analysis Tools: 
+    Use Cases: <br>
+    Code Analysis Tools: <br> 
     Used by tools like static analysis tools or code checkers that need to perform checks or generate warnings based on annotations 
     in the source code.
-    Documentation: 
+    Documentation: <br> 
     Some annotations used purely for documentation purposes, such as those generating source-level documentation or code comments, can be
     discarded at compile time.
     
@@ -253,19 +254,19 @@ Function:
     However, they are not available at runtime. 
     They can be used for code generation and other compile-time processing but not for runtime reflection.
 
-  Use Cases:
-  Bytecode Manipulation: Useful for tools that work with bytecode but don’t need to inspect annotations at runtime.
-  Compile-Time Checks: Used by compilers or annotation processors to generate additional source code (E.g- @Data)or perform checks during compilation.
+  Use Cases: <br>
+  Bytecode Manipulation: <br> Useful for tools that work with bytecode but don’t need to inspect annotations at runtime.
+  Compile-Time Checks: <br> Used by compilers or annotation processors to generate additional source code (E.g- @Data)or perform checks during compilation.
 
 *)RetentionPolicy.RUNTIME
     Annotations with this retention policy are retained at runtime and can be accessed via reflection. 
     This allows annotations to influence the behavior of a program during its execution.
-    Use Cases:
-    Frameworks and Libraries: Essential for frameworks and libraries that use reflection to inspect annotations and modify program behavior based on their 
+    Use Cases: <br>
+    Frameworks and Libraries: <br> Essential for frameworks and libraries that use reflection to inspect annotations and modify program behavior based on their 
      presence and values.
-    Dependency Injection: Used by dependency injection frameworks to configure and manage object dependencies at runtime.
-    Aspect-Oriented Programming (AOP): Used in AOP to apply cross-cutting concerns based on annotations.
-    Custom Behavior: Allows custom application logic to be dynamically adjusted based on annotated metadata.
+    Dependency Injection: <br> Used by dependency injection frameworks to configure and manage object dependencies at runtime.
+    Aspect-Oriented Programming (AOP): <br> Used in AOP to apply cross-cutting concerns based on annotations.
+    Custom Behavior: <br> Allows custom application logic to be dynamically adjusted based on annotated metadata.
 
 3.@Documented
 Indicates that an annotation should be included in the JavaDoc documentation for the annotated element.
@@ -318,7 +319,7 @@ Indicates that an annotation should be included in the JavaDoc documentation for
           MyRepeatableAnnotation[] value();
       }
 
-Usage : 
+Usage : <br> 
 
     public class Example {
 
@@ -335,7 +336,7 @@ Usage :
 To create a custom annotation, you need to define it using the @interface keyword. 
 You can also specify meta-annotations to control how your annotation behaves.
 
-1. Basic Syntax:
+1. Basic Syntax: <br>
 
         import java.lang.annotation.ElementType;
         import java.lang.annotation.Retention;
@@ -349,9 +350,9 @@ You can also specify meta-annotations to control how your annotation behaves.
             int level() default 1; // Optional element with default value
         }
    
-        @Retention(RetentionPolicy.RUNTIME): Indicates that the annotation will be available for reflection at runtime.
-        @Target(ElementType.METHOD): Specifies that this annotation can only be used on methods. Other options include ElementType.TYPE (for classes, interfaces), ElementType.FIELD, etc.
-        description and level: These are elements of the annotation, which can have default values.
+        @Retention(RetentionPolicy.RUNTIME): <br> Indicates that the annotation will be available for reflection at runtime.
+        @Target(ElementType.METHOD): <br> Specifies that this annotation can only be used on methods. Other options include ElementType.TYPE (for classes, interfaces), ElementType.FIELD, etc.
+        description and level: <br> These are elements of the annotation, which can have default values.
 
 3. Apply the Custom Annotation
 You can now use your custom annotation in your code. For example, apply it to methods or classes as needed.
@@ -367,7 +368,7 @@ You can now use your custom annotation in your code. For example, apply it to me
  To process the custom annotation, you typically use reflection.
  This allows you to inspect annotations at runtime and perform actions based on their presence and values.
 
-Example of Annotation Processing:
+Example of Annotation Processing: <br>
 
       import java.lang.reflect.Method;
       
@@ -377,21 +378,21 @@ Example of Annotation Processing:
                   Method method = ExampleClass.class.getMethod("myMethod");
                   if (method.isAnnotationPresent(MyCustomAnnotation.class)) {
                       MyCustomAnnotation annotation = method.getAnnotation(MyCustomAnnotation.class);
-                      System.out.println("Description: " + annotation.description());
-                      System.out.println("Level: " + annotation.level());
+                      System.out.println("Description: <br> " + annotation.description());
+                      System.out.println("Level: <br> " + annotation.level());
                   }
               } catch (NoSuchMethodException e) {
                   e.printStackTrace();
               }
           }
       }
-Explanation:
+Explanation: <br>
 
-method.isAnnotationPresent(MyCustomAnnotation.class): Checks if the myMethod method is annotated with @MyCustomAnnotation.
-method.getAnnotation(MyCustomAnnotation.class): Retrieves the @MyCustomAnnotation instance associated with myMethod.
+method.isAnnotationPresent(MyCustomAnnotation.class): <br> Checks if the myMethod method is annotated with @MyCustomAnnotation.
+method.getAnnotation(MyCustomAnnotation.class): <br> Retrieves the @MyCustomAnnotation instance associated with myMethod.
 
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-To be added : Heap Pollution issue with varargs.
+To be added : <br> Heap Pollution issue with varargs.
 
