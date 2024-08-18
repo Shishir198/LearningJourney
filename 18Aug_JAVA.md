@@ -239,37 +239,37 @@ Function: <br>
     RetentionPolicy.RUNTIME<br>
 
 *) RetentionPolicy.SOURCE
-    Annotations with this retention policy are only available in the source code and are discarded by the compiler. 
-    They are not included in the compiled .class files.
+    -Annotations with this retention policy are only available in the source code and are discarded by the compiler. 
+    -They are not included in the compiled .class files.
     Use Cases: <br>
     Code Analysis Tools: <br> 
-    Used by tools like static analysis tools or code checkers that need to perform checks or generate warnings based on annotations 
-    in the source code.
+    -Used by tools like static analysis tools or code checkers that need to perform checks or generate warnings based on annotations 
+     in the source code.<br> 
     Documentation: <br> 
-    Some annotations used purely for documentation purposes, such as those generating source-level documentation or code comments, can be
-    discarded at compile time.
+    Some annotations used purely for documentation purposes, such as those generating source-level documentation or code comments, can 
+    be discarded at compile time. <br>
     
-*)RetentionPolicy.CLASS
-    Annotations with this retention policy are retained by the compiler and included in the compiled .class files. 
-    However, they are not available at runtime. 
-    They can be used for code generation and other compile-time processing but not for runtime reflection.
+*)RetentionPolicy.CLASS<br>
+    -Annotations with this retention policy are retained by the compiler and included in the compiled .class files. 
+    -However, they are not available at runtime. 
+    -They can be used for code generation and other compile-time processing but not for runtime reflection.
 
   Use Cases: <br>
-  Bytecode Manipulation: <br> Useful for tools that work with bytecode but don’t need to inspect annotations at runtime.
-  Compile-Time Checks: <br> Used by compilers or annotation processors to generate additional source code (E.g- @Data)or perform checks during compilation.
+  Bytecode Manipulation: <br> Useful for tools that work with bytecode but don’t need to inspect annotations at runtime.<br>
+  Compile-Time Checks: <br> Used by compilers or annotation processors to generate additional source code (E.g- @Data)or perform checks during compilation.<br>
 
-*)RetentionPolicy.RUNTIME
-    Annotations with this retention policy are retained at runtime and can be accessed via reflection. 
-    This allows annotations to influence the behavior of a program during its execution.
+*)RetentionPolicy.RUNTIME<br>
+    -Annotations with this retention policy are retained at runtime and can be accessed via reflection. 
+    -This allows annotations to influence the behavior of a program during its execution.
     Use Cases: <br>
-    Frameworks and Libraries: <br> Essential for frameworks and libraries that use reflection to inspect annotations and modify program behavior based on their 
-     presence and values.
-    Dependency Injection: <br> Used by dependency injection frameworks to configure and manage object dependencies at runtime.
-    Aspect-Oriented Programming (AOP): <br> Used in AOP to apply cross-cutting concerns based on annotations.
-    Custom Behavior: <br> Allows custom application logic to be dynamically adjusted based on annotated metadata.
+    Frameworks and Libraries: <br> Essential for frameworks and libraries that use reflection to inspect annotations and modify 
+     program behavior based on their presence and values.<br>
+    Dependency Injection: <br> Used by dependency injection frameworks to configure and manage object dependencies at runtime.<br>
+    Aspect-Oriented Programming (AOP): <br> Used in AOP to apply cross-cutting concerns based on annotations.<br>
+    Custom Behavior: <br> Allows custom application logic to be dynamically adjusted based on annotated metadata.<br>
 
 3.@Documented
-Indicates that an annotation should be included in the JavaDoc documentation for the annotated element.
+-Indicates that an annotation should be included in the JavaDoc documentation for the annotated element.
 
 4.@Inherited
 -Indicates that an annotation declared on a superclass will be inherited by subclasses.
@@ -333,8 +333,8 @@ Usage : <br>
 
 <h2>Custom Annotations</h2>
 
-To create a custom annotation, you need to define it using the @interface keyword. 
-You can also specify meta-annotations to control how your annotation behaves.
+-To create a custom annotation, you need to define it using the @interface keyword. 
+-You can also specify meta-annotations to control how your annotation behaves.
 
 1. Basic Syntax: <br>
 
@@ -355,7 +355,7 @@ You can also specify meta-annotations to control how your annotation behaves.
         description and level: <br> These are elements of the annotation, which can have default values.
 
 3. Apply the Custom Annotation
-You can now use your custom annotation in your code. For example, apply it to methods or classes as needed.
+-You can now use your custom annotation in your code. For example, apply it to methods or classes as needed.
 
         public class ExampleClass {
         
@@ -365,8 +365,8 @@ You can now use your custom annotation in your code. For example, apply it to me
             }
         }
 4. Process the Custom Annotation
- To process the custom annotation, you typically use reflection.
- This allows you to inspect annotations at runtime and perform actions based on their presence and values.
+ -To process the custom annotation, you typically use reflection.
+ -This allows you to inspect annotations at runtime and perform actions based on their presence and values.
 
 Example of Annotation Processing: <br>
 
