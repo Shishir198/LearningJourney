@@ -51,8 +51,8 @@ For example, the @Deprecated annotation marks a method or class as obsolete, whi
     }
 
 
-<h2>In which scenario we must think , We should use Annotations</h2>:
-
+<h2>In which scenario we must think , We should use Annotations</h2>
+Example -
 -You have various service methods in your application that should only be accessible by users with specific roles, 
   such as ADMIN or USER. 
   Problem : 
@@ -228,7 +228,44 @@ Function:
             public @interface MyRuntimeAnnotation {
                 String value();
             }
+ - used to specify how long annotations with a given retention policy should be retained.
 
+ - Retention Policies
+    The @Retention annotation can have one of three retention policies:
+    
+    RetentionPolicy.SOURCE
+    RetentionPolicy.CLASS
+    RetentionPolicy.RUNTIME
+
+*) RetentionPolicy.SOURCE
+    Annotations with this retention policy are only available in the source code and are discarded by the compiler. 
+    They are not included in the compiled .class files.
+    Use Cases:
+    Code Analysis Tools: 
+    Used by tools like static analysis tools or code checkers that need to perform checks or generate warnings based on annotations 
+    in the source code.
+    Documentation: 
+    Some annotations used purely for documentation purposes, such as those generating source-level documentation or code comments, can be
+    discarded at compile time.
+    
+*)RetentionPolicy.CLASS
+    Annotations with this retention policy are retained by the compiler and included in the compiled .class files. 
+    However, they are not available at runtime. 
+    They can be used for code generation and other compile-time processing but not for runtime reflection.
+
+  Use Cases:
+  Bytecode Manipulation: Useful for tools that work with bytecode but don’t need to inspect annotations at runtime.
+  Compile-Time Checks: Used by compilers or annotation processors to generate additional source code (E.g- @Data)or perform checks during compilation.
+
+*)RetentionPolicy.RUNTIME
+    Annotations with this retention policy are retained at runtime and can be accessed via reflection. 
+    This allows annotations to influence the behavior of a program during its execution.
+    Use Cases:
+    Frameworks and Libraries: Essential for frameworks and libraries that use reflection to inspect annotations and modify program behavior based on their 
+     presence and values.
+    Dependency Injection: Used by dependency injection frameworks to configure and manage object dependencies at runtime.
+    Aspect-Oriented Programming (AOP): Used in AOP to apply cross-cutting concerns based on annotations.
+    Custom Behavior: Allows custom application logic to be dynamically adjusted based on annotated metadata.
 
 3.@Documented
 Indicates that an annotation should be included in the JavaDoc documentation for the annotated element.
