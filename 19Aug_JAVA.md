@@ -1,4 +1,6 @@
-Multithreading 
+<h1>Multithreading </h1>
+
+Credits - Concept and COding by Shreyansh Jain | https://youtu.be/TpYIcJN9EV8?si=umzOwNM_IFc8PNjg
 
 ![image](https://github.com/user-attachments/assets/137e8e23-c98c-4bc8-b21d-5201ee6f01f9)
 
