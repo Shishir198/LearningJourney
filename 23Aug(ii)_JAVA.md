@@ -1,5 +1,7 @@
 <h1>Thread Local Class</h1> 
 
+Credits - https://www.youtube.com/watch?v=pXVEEfYMwws | Shreyansh Jain
+
 ![image](https://github.com/user-attachments/assets/044c82ee-646d-4a52-a704-8807e964949c)
 
 - Whenever we create a thread each thread has this class thread local class object in it.
