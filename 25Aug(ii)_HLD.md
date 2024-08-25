@@ -1,5 +1,5 @@
 <h1> CAP Theorem</h1>
-
+Credits - https://www.youtube.com/watch?v=3qRBeZsUa18 | Shreyansh Jain
 
 Desirable property of distributed system with replicated data.
 
