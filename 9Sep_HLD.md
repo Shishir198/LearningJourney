@@ -44,11 +44,11 @@
 
 **Traffic :**
 
-Total users : 1 Billion 
-DAU (Daily active users) : 25% of Total users ~ 250 Million users
-Queries / day - Let's say , one user does read-(5) and write-(2) ~ we get 7 operations per user.
+- Total users : 1 Billion 
+- DAU (Daily active users) : 25% of Total users ~ 250 Million users
+- Queries / day - Let's say , one user does read-(5) and write-(2) ~ we get 7 operations per user.
 
-Daily requests /second = (250 Million users/day * 7 ops) / (60 * 60 * 24 secs) == ~ close to 18K query per sec.
+- Daily requests /second = (250 Million users/day * 7 ops) / (60 * 60 * 24 secs) == ~ close to 18K query per sec.
 
 **Storage :** 
 
@@ -83,7 +83,7 @@ Daily requests /second = (250 Million users/day * 7 ops) / (60 * 60 * 24 secs) =
 
 - So we have decided , no of servers , ram and storage through estimation .
 
-- **Now , tradeoffs with CAP Theorem.**
+**Now , tradeoffs with CAP Theorem.**
 
 - AS facebook is a social media platform , we can trade consistency with availability .
 
