@@ -1,5 +1,7 @@
 <h1> System Design of URL Shortener</h1>
 
+Credits - https://www.youtube.com/watch?v=C7_--hAhiaM | Shreyansh Jain
+
 - It is a tool that converts a long URL into a shorter one, making it easier to share, especially in platforms with character limits.
 - It's beneficial for social media, text messages, or any situation where brevity is important.
 
