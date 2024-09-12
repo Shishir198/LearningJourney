@@ -1,5 +1,7 @@
 <h1>HLD of chat appliaction like Whatsapp</h1>
 
+Credits - https://www.youtube.com/watch?v=a8KUKOh3YXk | Shrayansh Jain
+
 Functional Requirement (Mandatory)
 
 - One to One send and receive message capability.
